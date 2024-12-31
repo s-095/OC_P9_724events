@@ -35,7 +35,7 @@ export const DataProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    if (!data) return;
+    if (!data || !data.events) return;
     const sortedEvents = data.events.sort((event1, event2) => {
       if (event1.date < event2.date) return 1;
       return -1;
